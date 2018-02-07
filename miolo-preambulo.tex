@@ -6,9 +6,11 @@
 % verdade, ifpdf não detecta pdfTeX, mas sim se estamos gerando um PDF; como
 % só XeTeX, LuaTeX e pdfTeX geram PDFs, combinando todos é possível identificar
 % pdfTeX também.
-\usepackage{ifxetex}
-\usepackage{ifluatex}
-\usepackage{ifpdf}
+
+%%-> melhor assumir que é pdfLaTeX
+% \usepackage{ifxetex}
+% \usepackage{ifluatex}
+% \usepackage{ifpdf}
 
 % "fontenc" é um parâmetro interno do LaTeX. O fontenc default é OT1, mas ele
 % tem algumas limitações; a mais importante é que, com ele, palavras acentuadas
@@ -16,9 +18,10 @@
 % utilizam o fontenc T1. A escolha do fontenc tem consequências para as fontes
 % que podem ser usadas no documento; hoje em dia T1 tem mais opções de
 % qualidade, então não se perde nada.
+
 \usepackage[T1]{fontenc}
 
-% apenas útil para LaTeX tradicional e pdfTeX; XeTeX e LuaTeX usam sempre utf8.
+% apenas útil para LaTeX tradicional e pdfTeX; XeTeX e LuaTeX usam sempre utf8.(não)
 \usepackage[utf8]{inputenc}
 
 % Permite criar "headed lists", ou seja, "listas" de elementos que vão
@@ -31,7 +34,7 @@
 % hifenização e outras convenções tipográficas. babel deve ser um dos
 % primeiros pacotes carregados. É possível passar a língua do documento
 % como parâmetro aqui, mas já fizemos isso ao carregar a classe, mais acima.
-\usepackage{babel}
+\usepackage[brazil]{babel}
 
 % É possível personalizar as palavras-chave que babel utiliza, por exemplo:
 %\addto\extrasbrazil{\renewcommand{\refname}{Bibliografia}}
@@ -67,23 +70,15 @@
   ]{microtype}
 }
 
-\ifxetex
-  \activatemicrotype
-\else
-  \ifluatex
-    \activatemicrotype
-  \else
-    \ifpdf
-      \activatemicrotype
-    \else
-    \fi
-  \fi
-\fi
+\activatemicrotype
+
 
 % Alguns "truques" (sujos?) para minimizar over/underfull boxes.
-\tolerance=800
-\hyphenpenalty=800
-\setlength{\emergencystretch}{2.5em}
+% Desnecessário em princípio
+
+% \tolerance=800
+% \hyphenpenalty=800
+% \setlength{\emergencystretch}{2.5em}
 
 % Normalmente, LaTeX faz o final da página terminar sempre no mesmo lugar
 % (exceto no final dos capítulos). Esse padrão pode ser ativado explicitamente
@@ -182,7 +177,7 @@
 % esse fim:
 %\usepackage{newtxtt}
 %\usepackage{DejaVuSansMono}
-\usepackage{inconsolata}
+%\usepackage{inconsolata}
 
 % Ao invés da família Computer Modern, é possível usar outras como padrão.
 % Uma ótima opção é a libertine, similar (mas não igual) à Times mas com
