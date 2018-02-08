@@ -19,22 +19,22 @@
 % que podem ser usadas no documento; hoje em dia T1 tem mais opções de
 % qualidade, então não se perde nada.
 
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 
 % apenas útil para LaTeX tradicional e pdfTeX; XeTeX e LuaTeX usam sempre utf8.(não)
-\usepackage[utf8]{inputenc}
+%\usepackage[utf8]{inputenc}
 
 % Permite criar "headed lists", ou seja, "listas" de elementos que vão
 % aparecendo ao longo do documento (como, por exemplo, teoremas). Podem ser
 % também citações a autores específicos, seções de um documento que está
 % sendo analisado etc. Precisa ser carregado antes das definições de fontes.
-\usepackage{amsthm}
+%\usepackage{amsthm}
 
 % Internacionalização dos nomes das seções ("chapter" X "capítulo" etc.),
 % hifenização e outras convenções tipográficas. babel deve ser um dos
 % primeiros pacotes carregados. É possível passar a língua do documento
 % como parâmetro aqui, mas já fizemos isso ao carregar a classe, mais acima.
-\usepackage[brazil]{babel}
+%\usepackage[brazil]{babel}
 
 % É possível personalizar as palavras-chave que babel utiliza, por exemplo:
 %\addto\extrasbrazil{\renewcommand{\refname}{Bibliografia}}
@@ -94,25 +94,25 @@
 % Isso não é tão bom quanto alguns TeX-eiros defendem :) .
 % Esta opção desabilita isso e, consequentemente, evita problemas com
 % "id est" (i.e.) e "exempli gratia" (e.g.)
-\frenchspacing
+%\frenchspacing
 
 % LaTeX por default segue o estilo americano e não faz a indentação da
 % primeira linha do primeiro parágrafo de uma seção; este pacote ativa essa
 % indentação, como é o estilo brasileiro
-\usepackage{indentfirst}
+%\usepackage{indentfirst}
 
 % LaTeX às vezes coloca notas de rodapé logo após o final do texto da
 % página ao invés de no final da página; este pacote evita isso.
-\usepackage[bottom]{footmisc}
+%\usepackage[bottom]{footmisc}
 
 % Se uma página está vazia, não imprime número de página ou cabeçalho
-\usepackage{emptypage}
+%\usepackage{emptypage}
 
 % Espaçamento entre linhas configurável (\singlespacing, \onehalfspacing etc.)
-\usepackage{setspace}
+%\usepackage{setspace}
 
 % Carrega nomes de cores disponíveis (podem ser usados com hyperref e listings)
-\usepackage[usenames,svgnames,dvipsnames]{xcolor}
+%\usepackage[usenames,svgnames,dvipsnames]{xcolor}
 
 % Por padrão, o algoritmo LaTeX para textos não-justificados é (muito) ruim;
 % este pacote implementa um algoritmo bem melhor
@@ -275,17 +275,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % tamanho da página e margens
-\usepackage[a4paper]{geometry}
-\geometry{
-  top=2.54cm,
-  bottom=2.0cm,
-  left=2.0cm,
-  right=2.54cm,
-  headheight=4.9mm,
-  headsep=10mm,
-  footskip=9.5mm,
-  nomarginpar,
-}
+%\usepackage[a4paper]{geometry}
+%\% geometry{
+%   top=2.54cm,
+%   bottom=2.0cm,
+%   left=2.0cm,
+%   right=2.54cm,
+%   headheight=4.9mm,
+%   headsep=10mm,
+%   footskip=9.5mm,
+%   nomarginpar,
+% }
 
 % Formatação personalizada das listas "itemize", "enumerate" e
 % "description", além de permitir criar novos tipos de listas
@@ -306,10 +306,10 @@
 %\usepackage{lastpage}
 
 % Formatação dos cabeçalhos e rodapés
-\usepackage{fancyhdr}
+%%\usepackage{fancyhdr}
 
 % Sem linha separando o cabeçalho
-\renewcommand{\headrulewidth}{0pt}
+%%\renewcommand{\headrulewidth}{0pt}
 
 % A formatação dos cabeçalhos/rodapés envolve duas coisas:
 % 1. Escolher qual texto deve ser impresso nas páginas pares/ímpares
@@ -337,62 +337,62 @@
 
 % Só olha até o nível 2 (seções), ou seja, não coloca nomes de
 % subseções ou subsubseções nos cabeçalhos.
-\setcounter{tocdepth}{2}
+%\setcounter{tocdepth}{2}
 
-\newcommand{\formataNumPaginas}{
+%\newcommand{\formataNumPaginas}{
   % Texto normal, em maiúsculas
-  \fancyhead[RO]{\footnotesize\thepage}
-  \fancyhead[LE]{\footnotesize\thepage}
+ % \fancyhead[RO]{\footnotesize\thepage}
+  %\fancyhead[LE]{\footnotesize\thepage}
   % Em negrito
   %\fancyhead[RO]{\footnotesize\textbf{\thepage}}
   %\fancyhead[LE]{\footnotesize\textbf{\thepage}}
-}
+%}
 
-\newcommand{\formataCabecalhosDinamicos}{
+%\newcommand{\formataCabecalhosDinamicos}{
   % Texto normal, em maiúsculas
-  \fancyhead[LO]{\footnotesize\MakeUppercase{\rightmark}}
-  \fancyhead[RE]{\footnotesize\MakeUppercase{\leftmark}}
+ % \fancyhead[LO]{\footnotesize\MakeUppercase{\rightmark}}
+  %\fancyhead[RE]{\footnotesize\MakeUppercase{\leftmark}}
   % Em negrito
   %\fancyhead[LO]{\footnotesize\textbf{\rightmark}}
   %\fancyhead[RE]{\footnotesize\textbf{\leftmark}}
-}
+%}
 
-\fancypagestyle{mainmatter}{
+%\fancypagestyle{mainmatter}{
   % Nome do capítulo no cabeçalho das páginas pares (e nas
   % ímpares quando não há seções)
-  \renewcommand{\chaptermark}[1]{\markboth{##1}{##1}}
-
+%  \renewcommand{\chaptermark}[1]{\markboth{##1}{##1}}
+%
   % Número e nome da seção no cabeçalho das páginas ímpares
-  \renewcommand{\sectionmark}[1]{\markright{\thesection. ##1}}
+ % \renewcommand{\sectionmark}[1]{\markright{\thesection. ##1}}
 
-  \fancyhf{}
-  \formataNumPaginas{}
-  \formataCabecalhosDinamicos{}
-}
+  %\fancyhf{}
+  %\formataNumPaginas{}
+ % \formataCabecalhosDinamicos{}
+%}
 
-\fancypagestyle{appendix}{
-  \renewcommand{\chaptermark}[1]{%
-    \markboth{%
+%\fancypagestyle{appendix}{
+%  \renewcommand{\chaptermark}[1]{%
+ %   \markboth{%
       % Páginas ímpares: "Apêndice X"
-      \appendixname\ \thechapter%
-    }{%
+ %     \appendixname\ \thechapter%
+%    }{%
       % Páginas pares: "X. nome do apêndice"
-      \thechapter. ##1%
-    }
-  }
+    %  \thechapter. ##1%
+   % }
+  %}
 
-  \fancyhf{}
-  \formataNumPaginas{}
-  \formataCabecalhosDinamicos{}
-}
+  %\fancyhf{}
+  %\formataNumPaginas{}
+ % \formataCabecalhosDinamicos{}
+%}
 
 % A página inicial de cada capítulo é automaticamente configurada para o estilo
 % "plain", então vamos definir esse estilo (colocando o número de página no
 % mesmo lugar das demais). As páginas iniciais também usam esse estilo.
-\fancypagestyle{plain}{
-  \fancyhf{}
-  \formataNumPaginas{}
-}
+%\fancypagestyle{plain}{
+%  \fancyhf{}
+%  \formataNumPaginas{}
+%}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -404,22 +404,22 @@
 % pdfTeX, XeTeX, e LuaTeX podem usar figuras nos formatos PDF, JPG e PNG; EPS
 % também pode funcionar em algumas instalações mas não é garantido, então é
 % melhor evitar.
-\usepackage{graphicx}
+%\usepackage{graphicx}
 
 % Diretório onde estão as figuras; com isso, não é preciso colocar o caminho
 % completo em \includegraphics. Na verdade, não precisa nem colocar a extensão
-\graphicspath{{./figuras/}}
+%\graphicspath{{./figuras/}}
 
 % Mais tipos de float e mais opções para personalização; este pacote
 % também acrescenta a possibilidade de definir "H" como opção de
 % posicionamento do float, que significa "aqui, incondicionalmente".
-\usepackage{float}
+%\usepackage{float}
 
 % Por padrão, LaTeX prefere colocar floats no topo da página que
 % onde eles foram definidos; vamos mudar isso. Este comando depende
 % do pacote "float", carregado logo acima.
-\floatplacement{table}{htbp}
-\floatplacement{figure}{htbp}
+%\floatplacement{table}{htbp}
+%\floatplacement{figure}{htbp}
 
 % Garante que floats (tabelas e figuras) só apareçam após as seções a que
 % pertencem. Por padrão, se a seção começa no meio da página, LaTeX pode
@@ -599,13 +599,13 @@
 % e altere as opções do pacote hyperref.
 
 % Cria o arquivo de configuração para xindy lidar corretamente com hyperlinks.
-\begin{filecontents*}{hyperxindy.xdy}
-(define-attributes ("emph"))
-(markup-locref :open "\hyperpage{" :close "}" :attr "default")
-(markup-locref :open "\textbf{\hyperpage{" :close "}}" :attr "textbf")
-(markup-locref :open "\textit{\hyperpage{" :close "}}" :attr "textit")
-(markup-locref :open "\emph{\hyperpage{" :close "}}" :attr "emph")
-\end{filecontents*}
+% \begin{filecontents*}{hyperxindy.xdy}
+% (define-attributes ("emph"))
+% (markup-locref :open "\hyperpage{" :close "}" :attr "default")
+% (markup-locref :open "\textbf{\hyperpage{" :close "}}" :attr "textbf")
+% (markup-locref :open "\textit{\hyperpage{" :close "}}" :attr "textit")
+% (markup-locref :open "\emph{\hyperpage{" :close "}}" :attr "emph")
+% \end{filecontents*}
 
 % "-C utf8" e um truque para contornar este bug, que existe em outras
 % distribuicoes tambem:
@@ -799,49 +799,8 @@
   numbersep=15pt,
   xleftmargin=25pt,
   framexleftmargin=20pt,
-}%%%%%%%%%%% Usando biblatex: %%%%%%%%%%%
-% https://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
-% https://github.com/PaulStanley/biblatex-tutorial/releases
-\usepackage[
-  % Ativa o suporte ao pacote hyperref
-  hyperref=true,
-  % Reconhece comandos no estilo do pacote natbib (\citet, \citep)
-  natbib=true,
-  % Se um item da bibliografia tem língua definida (com langid), permite
-  % hifenizar com base na língua selecionada.
-  autolang=hyphen,
-  % Inclui, em cada item da bibliografia, links para as páginas onde o
-  % item foi citado
-  backref=true,
-  % Com mais de 5 nomes, usa "et. al." na bibliografia
-  maxbibnames=5,
-  % Com mais de 2 nomes, usa "et. al." nas citações (só faz
-  % diferença nos estilos autor-data, como plainnat-ime)
-  maxcitenames=2,
-  % Estilo similar a plainnat
-  bibstyle=plainnat-ime,
-  citestyle=plainnat-ime,
-  % Estilo similar a alpha
-  %bibstyle=alphabetic,
-  %citestyle=alphabetic,
-  % O estilo numérico é comum em artigos
-  %bibstyle=numeric,
-  %citestyle=numeric,
-  % Um estilo que busca ser compatível com a ABNT:
-  %bibstyle=abnt,
-  %citestyle=abnt,
-]{biblatex}
+}
 
-% Sobrenomes nas citações e na bibliografia em Small Caps
-\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
-
-% Se desejável, o label na bibliografia no formato
-% plainnat-ime pode ser feito em negrito
-%\renewcommand*{\labelhighlight}[1]{\textbf{#1}}
-
-% Autores no formato "nome sobrenome"
-\DeclareNameAlias{sortname}{given-family}
-\DeclareNameAlias{default}{given-family}
 %%%%%%%%%%% Usando biblatex: %%%%%%%%%%%
 % https://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
 % https://github.com/PaulStanley/biblatex-tutorial/releases
@@ -974,166 +933,7 @@
 %%%%%%%%%%% Usando biblatex: %%%%%%%%%%%
 % https://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
 % https://github.com/PaulStanley/biblatex-tutorial/releases
-\usepackage[
-  % Ativa o suporte ao pacote hyperref
-  hyperref=true,
-  % Reconhece comandos no estilo do pacote natbib (\citet, \citep)
-  natbib=true,
-  % Se um item da bibliografia tem língua definida (com langid), permite
-  % hifenizar com base na língua selecionada.
-  autolang=hyphen,
-  % Inclui, em cada item da bibliografia, links para as páginas onde o
-  % item foi citado
-  backref=true,
-  % Com mais de 5 nomes, usa "et. al." na bibliografia
-  maxbibnames=5,
-  % Com mais de 2 nomes, usa "et. al." nas citações (só faz
-  % diferença nos estilos autor-data, como plainnat-ime)
-  maxcitenames=2,
-  % Estilo similar a plainnat
-  bibstyle=plainnat-ime,
-  citestyle=plainnat-ime,
-  % Estilo similar a alpha
-  %bibstyle=alphabetic,
-  %citestyle=alphabetic,
-  % O estilo numérico é comum em artigos
-  %bibstyle=numeric,
-  %citestyle=numeric,
-  % Um estilo que busca ser compatível com a ABNT:
-  %bibstyle=abnt,
-  %citestyle=abnt,
-]{biblatex}
 
-% Sobrenomes nas citações e na bibliografia em Small Caps
-\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
-
-% Se desejável, o label na bibliografia no formato
-% plainnat-ime pode ser feito em negrito
-%\renewcommand*{\labelhighlight}[1]{\textbf{#1}}
-
-% Autores no formato "nome sobrenome"
-\DeclareNameAlias{sortname}{given-family}
-\DeclareNameAlias{default}{given-family}
-%%%%%%%%%%% Usando biblatex: %%%%%%%%%%%
-% https://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
-% https://github.com/PaulStanley/biblatex-tutorial/releases
-\usepackage[
-  % Ativa o suporte ao pacote hyperref
-  hyperref=true,
-  % Reconhece comandos no estilo do pacote natbib (\citet, \citep)
-  natbib=true,
-  % Se um item da bibliografia tem língua definida (com langid), permite
-  % hifenizar com base na língua selecionada.
-  autolang=hyphen,
-  % Inclui, em cada item da bibliografia, links para as páginas onde o
-  % item foi citado
-  backref=true,
-  % Com mais de 5 nomes, usa "et. al." na bibliografia
-  maxbibnames=5,
-  % Com mais de 2 nomes, usa "et. al." nas citações (só faz
-  % diferença nos estilos autor-data, como plainnat-ime)
-  maxcitenames=2,
-  % Estilo similar a plainnat
-  bibstyle=plainnat-ime,
-  citestyle=plainnat-ime,
-  % Estilo similar a alpha
-  %bibstyle=alphabetic,
-  %citestyle=alphabetic,
-  % O estilo numérico é comum em artigos
-  %bibstyle=numeric,
-  %citestyle=numeric,
-  % Um estilo que busca ser compatível com a ABNT:
-  %bibstyle=abnt,
-  %citestyle=abnt,
-]{biblatex}
-
-% Sobrenomes nas citações e na bibliografia em Small Caps
-\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
-
-% Se desejável, o label na bibliografia no formato
-% plainnat-ime pode ser feito em negrito
-%\renewcommand*{\labelhighlight}[1]{\textbf{#1}}
-
-% Autores no formato "nome sobrenome"
-\DeclareNameAlias{sortname}{given-family}
-\DeclareNameAlias{default}{given-family}%%%%%%%%%%% Usando biblatex: %%%%%%%%%%%
-% https://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
-% https://github.com/PaulStanley/biblatex-tutorial/releases
-\usepackage[
-  % Ativa o suporte ao pacote hyperref
-  hyperref=true,
-  % Reconhece comandos no estilo do pacote natbib (\citet, \citep)
-  natbib=true,
-  % Se um item da bibliografia tem língua definida (com langid), permite
-  % hifenizar com base na língua selecionada.
-  autolang=hyphen,
-  % Inclui, em cada item da bibliografia, links para as páginas onde o
-  % item foi citado
-  backref=true,
-  % Com mais de 5 nomes, usa "et. al." na bibliografia
-  maxbibnames=5,
-  % Com mais de 2 nomes, usa "et. al." nas citações (só faz
-  % diferença nos estilos autor-data, como plainnat-ime)
-  maxcitenames=2,
-  % Estilo similar a plainnat
-  bibstyle=plainnat-ime,
-  citestyle=plainnat-ime,
-  % Estilo similar a alpha
-  %bibstyle=alphabetic,
-  %citestyle=alphabetic,
-  % O estilo numérico é comum em artigos
-  %bibstyle=numeric,
-  %citestyle=numeric,
-  % Um estilo que busca ser compatível com a ABNT:
-  %bibstyle=abnt,
-  %citestyle=abnt,
-]{biblatex}
-
-% Sobrenomes nas citações e na bibliografia em Small Caps
-\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
-
-% Se desejável, o label na bibliografia no formato
-% plainnat-ime pode ser feito em negrito
-%\renewcommand*{\labelhighlight}[1]{\textbf{#1}}
-
-% Autores no formato "nome sobrenome"
-\DeclareNameAlias{sortname}{given-family}
-\DeclareNameAlias{default}{given-family}
-%%%%%%%%%%% Usando biblatex: %%%%%%%%%%%
-% https://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
-% https://github.com/PaulStanley/biblatex-tutorial/releases
-\usepackage[
-  % Ativa o suporte ao pacote hyperref
-  hyperref=true,
-  % Reconhece comandos no estilo do pacote natbib (\citet, \citep)
-  natbib=true,
-  % Se um item da bibliografia tem língua definida (com langid), permite
-  % hifenizar com base na língua selecionada.
-  autolang=hyphen,
-  % Inclui, em cada item da bibliografia, links para as páginas onde o
-  % item foi citado
-  backref=true,
-  % Com mais de 5 nomes, usa "et. al." na bibliografia
-  maxbibnames=5,
-  % Com mais de 2 nomes, usa "et. al." nas citações (só faz
-  % diferença nos estilos autor-data, como plainnat-ime)
-  maxcitenames=2,
-  % Estilo similar a plainnat
-  bibstyle=plainnat-ime,
-  citestyle=plainnat-ime,
-  % Estilo similar a alpha
-  %bibstyle=alphabetic,
-  %citestyle=alphabetic,
-  % O estilo numérico é comum em artigos
-  %bibstyle=numeric,
-  %citestyle=numeric,
-  % Um estilo que busca ser compatível com a ABNT:
-  %bibstyle=abnt,
-  %citestyle=abnt,
-]{biblatex}
-
-% Sobrenomes nas citações e na bibliografia em Small Caps
-\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
 
 % Se desejável, o label na bibliografia no formato
 % plainnat-ime pode ser feito em negrito
@@ -1451,90 +1251,7 @@
 % Símbolos adicionais, como \textrightarrow, \texteuro etc.
 %\usepackage{textcomp}
 
-% Permite criar listas%%%%%%%%%%% Usando biblatex: %%%%%%%%%%%
-% https://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
-% https://github.com/PaulStanley/biblatex-tutorial/releases
-\usepackage[
-  % Ativa o suporte ao pacote hyperref
-  hyperref=true,
-  % Reconhece comandos no estilo do pacote natbib (\citet, \citep)
-  natbib=true,
-  % Se um item da bibliografia tem língua definida (com langid), permite
-  % hifenizar com base na língua selecionada.
-  autolang=hyphen,
-  % Inclui, em cada item da bibliografia, links para as páginas onde o
-  % item foi citado
-  backref=true,
-  % Com mais de 5 nomes, usa "et. al." na bibliografia
-  maxbibnames=5,
-  % Com mais de 2 nomes, usa "et. al." nas citações (só faz
-  % diferença nos estilos autor-data, como plainnat-ime)
-  maxcitenames=2,
-  % Estilo similar a plainnat
-  bibstyle=plainnat-ime,
-  citestyle=plainnat-ime,
-  % Estilo similar a alpha
-  %bibstyle=alphabetic,
-  %citestyle=alphabetic,
-  % O estilo numérico é comum em artigos
-  %bibstyle=numeric,
-  %citestyle=numeric,
-  % Um estilo que busca ser compatível com a ABNT:
-  %bibstyle=abnt,
-  %citestyle=abnt,
-]{biblatex}
-
-% Sobrenomes nas citações e na bibliografia em Small Caps
-\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
-
-% Se desejável, o label na bibliografia no formato
-% plainnat-ime pode ser feito em negrito
-%\renewcommand*{\labelhighlight}[1]{\textbf{#1}}
-
-% Autores no formato "nome sobrenome"
-\DeclareNameAlias{sortname}{given-family}
-\DeclareNameAlias{default}{given-family}
-
-% Autores no formato "sobrenome, nome"
-%\DeclareNameAlias{sortname}{family-given}
-%\DeclareNameAlias{default}{family-given}
-
-% Vamos deixar um pequeno espaço entre cada item da bibliografia
-\setlength{\bibitemsep}{1em}
-
-% A primeira linha de cada item da bibliografia pode ter margem menor
-% que as demais; aqui definimos essa diferença:
-\setlength{\bibhang}{2em}
-
-\AtBeginBibliography{
-  % No estilo alfabético, biblatex coloca o "label" de cada item
-  % alinhado à esquerda; bibtex alinha à direita e isso faz
-  % mais sentido, então redefinimos o alinhamento aqui.
-  \renewcommand*{\makelabel}[1]{\hss#1}
-}
-
-\DefineBibliographyStrings{brazilian}{
-  % Na bibliografia, criamos links para as páginas onde uma
-  % determinada obra foi citada. O texto padrão para indicar
-  % isso é "ver...", vamos trocar.
-  backrefpage  = {citado na pg\adddot},
-  backrefpages = {citado nas pgs\adddot},
-  % "et al." em itálico
-  andothers    = {\textit{et\addabbrvspace al}\adddot},
-  page         = {pg\adddot},
-  pages        = {pgs\adddot},
-}
-
-\DefineBibliographyStrings{american}{
-  % "et al." em itálico
-  andothers    = {\textit{et\addabbrvspace al}\adddot},
-}
- como glossários, listas de abreviaturas etc.
-% https://en.wikibooks.org/wiki/LaTeX/Glossary
-%\usepackage{glossaries}
-
-% Permite formatar texto em colunas
-%\usepackage{multicol}
+% Permite criar listas
 
 % Os comandos \TeX e \LaTeX são nativos do LaTeX; esta package acrescenta os
 % comandos \XeLaTeX e \LuaLaTeX. Você provavelmente não precisa desse recurso
@@ -1589,94 +1306,3 @@
 % independentes por seções, há duas soluções: (1) desabilitar o pacote
 % titlesec; (2) indicar as seções manualmente.
 
-%%%%%%%%%%% Usando bibtex: %%%%%%%%%%%%
-%\usepackage[hyperpageref]{backref}
-%\renewcommand*{\backref}[1]{}
-%\renewcommand*{\backrefalt}[4]{%
-%  \scriptsize%
-%  \ifcase #1\relax%
-%  \or(Citado na pg. #2)%
-%  \else(Citado nas pgs. #2)%
-%  \fi%
-%}
-%\usepackage[square,sort,nonamebreak,comma]{natbib-ime}  % citação bibliográfica alpha (alpha-ime.bst)
-%\usepackage[round,sort,nonamebreak]{natbib-ime} % citação bibliográfica textual(plainnat-ime.bst)
-
-%%%%%%%%%%% Usando biblatex: %%%%%%%%%%%
-% https://tex.stackexchange.com/questions/12806/guidelines-for-customizing-biblatex-styles
-% https://github.com/PaulStanley/biblatex-tutorial/releases
-\usepackage[
-  % Ativa o suporte ao pacote hyperref
-  hyperref=true,
-  % Reconhece comandos no estilo do pacote natbib (\citet, \citep)
-  natbib=true,
-  % Se um item da bibliografia tem língua definida (com langid), permite
-  % hifenizar com base na língua selecionada.
-  autolang=hyphen,
-  % Inclui, em cada item da bibliografia, links para as páginas onde o
-  % item foi citado
-  backref=true,
-  % Com mais de 5 nomes, usa "et. al." na bibliografia
-  maxbibnames=5,
-  % Com mais de 2 nomes, usa "et. al." nas citações (só faz
-  % diferença nos estilos autor-data, como plainnat-ime)
-  maxcitenames=2,
-  % Estilo similar a plainnat
-  bibstyle=plainnat-ime,
-  citestyle=plainnat-ime,
-  % Estilo similar a alpha
-  %bibstyle=alphabetic,
-  %citestyle=alphabetic,
-  % O estilo numérico é comum em artigos
-  %bibstyle=numeric,
-  %citestyle=numeric,
-  % Um estilo que busca ser compatível com a ABNT:
-  %bibstyle=abnt,
-  %citestyle=abnt,
-]{biblatex}
-
-% Sobrenomes nas citações e na bibliografia em Small Caps
-\renewcommand{\mkbibnamefamily}[1]{\textsc{#1}}
-
-% Se desejável, o label na bibliografia no formato
-% plainnat-ime pode ser feito em negrito
-%\renewcommand*{\labelhighlight}[1]{\textbf{#1}}
-
-% Autores no formato "nome sobrenome"
-\DeclareNameAlias{sortname}{given-family}
-\DeclareNameAlias{default}{given-family}
-
-% Autores no formato "sobrenome, nome"
-%\DeclareNameAlias{sortname}{family-given}
-%\DeclareNameAlias{default}{family-given}
-
-% Vamos deixar um pequeno espaço entre cada item da bibliografia
-\setlength{\bibitemsep}{1em}
-
-% A primeira linha de cada item da bibliografia pode ter margem menor
-% que as demais; aqui definimos essa diferença:
-\setlength{\bibhang}{2em}
-
-\AtBeginBibliography{
-  % No estilo alfabético, biblatex coloca o "label" de cada item
-  % alinhado à esquerda; bibtex alinha à direita e isso faz
-  % mais sentido, então redefinimos o alinhamento aqui.
-  \renewcommand*{\makelabel}[1]{\hss#1}
-}
-
-\DefineBibliographyStrings{brazilian}{
-  % Na bibliografia, criamos links para as páginas onde uma
-  % determinada obra foi citada. O texto padrão para indicar
-  % isso é "ver...", vamos trocar.
-  backrefpage  = {citado na pg\adddot},
-  backrefpages = {citado nas pgs\adddot},
-  % "et al." em itálico
-  andothers    = {\textit{et\addabbrvspace al}\adddot},
-  page         = {pg\adddot},
-  pages        = {pgs\adddot},
-}
-
-\DefineBibliographyStrings{american}{
-  % "et al." em itálico
-  andothers    = {\textit{et\addabbrvspace al}\adddot},
-}
